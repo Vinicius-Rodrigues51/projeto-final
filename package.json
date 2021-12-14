@@ -1,0 +1,16 @@
+{
+  "name": "projeto-final",
+  "version": "1.0.0",
+  "description": "'Projeto final do curso de JavaScript'",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development --watch ./js/script.js -o ./main.js",
+    "build": "webpack --mode production ./js/script.js --output ./main.js"
+   },  
+  "author": "Vinicius Rodrigues",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
+  }
+}
