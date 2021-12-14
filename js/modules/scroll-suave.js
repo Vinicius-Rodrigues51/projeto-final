@@ -1,26 +1,31 @@
-export default function linkScroll() {
-    const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]');
+export default class LinkScroll {
+    constructor(links, options) {
+        this.linksInternos = document.querySelectorAll(links);
+        if (options === undefined) {
+            this.options = { behavior: 'smooth', block: 'start' }
+        }else {
+            this.options = options;
+        }
 
-    function scrollToSection(e) {
+        this.scrollToSection = this.scrollToSection.bind(this);
+    }
+
+    scrollToSection(e) {
         e.preventDefault();
         const href = e.currentTarget.getAttribute('href')
         const section = document.querySelector(href)
         
-        section.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start',
-        })
-
-
-
-        // const top = section.offsetTop;
-        // window.scrollTo({
-        //     top: top,
-        //     behavior: 'smooth',
-        // })
+        section.scrollIntoView(this.options)
     }
 
-    linksInternos.forEach(item => {
-        item.addEventListener('click', scrollToSection);
-    })
+    addLinkEvent() {
+        this.linksInternos.forEach(item => {
+            item.addEventListener('click', this.scrollToSection);
+        })
+    }
+
+    init() {
+        this.addLinkEvent()
+        return this;
+    }
 }

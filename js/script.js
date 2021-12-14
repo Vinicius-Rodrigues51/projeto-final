@@ -1,4 +1,4 @@
-import linkScroll from './modules/scroll-suave.js';
+import LinkScroll from './modules/scroll-suave.js';
 import initAnimacaoScroll from './modules/scroll-animacao.js';
 import initTabFaq from './modules/accordion.js';
 import initTabMenu from './modules/tabnav.js';
@@ -9,8 +9,10 @@ import initFuncionamento from './modules/funcionamento.js';
 import initFetchAnimais from './modules/fetch-animais.js';
 import fetchBTC from './modules/fetchBtc.js';
 
+const scrollSuave = new LinkScroll('.js-menu a[href^="#"]')
+scrollSuave.init()
+
 initTabMenu();
-linkScroll();
 initAnimacaoScroll();
 initTabFaq();
 initModal();
