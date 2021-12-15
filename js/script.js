@@ -1,6 +1,6 @@
 import LinkScroll from './modules/scroll-suave.js';
 import initAnimacaoScroll from './modules/scroll-animacao.js';
-import initTabFaq from './modules/accordion.js';
+import Accordions from './modules/accordion.js';
 import initTabMenu from './modules/tabnav.js';
 import initModal from './modules/modal.js';
 import dropDownMenu from './modules/dropdown-menu.js';
@@ -12,9 +12,11 @@ import fetchBTC from './modules/fetchBtc.js';
 const scrollSuave = new LinkScroll('.js-menu a[href^="#"]')
 scrollSuave.init()
 
+const accordion = new Accordions('.js-accordion dt')
+accordion.init();
+
 initTabMenu();
 initAnimacaoScroll();
-initTabFaq();
 initModal();
 dropDownMenu();
 initMenuMobile();
