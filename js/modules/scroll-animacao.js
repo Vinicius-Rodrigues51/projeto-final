@@ -1,22 +1,35 @@
-export default function initAnimacaoScroll() {
-    const sections = document.querySelectorAll('.js-scroll');
-    if (sections.length) {
-        const windowHeight = window.innerHeight * 0.6;
+export default class AnimacaoScroll {
+    constructor(sections) {
+        this.sections = document.querySelectorAll(sections);
+        this.windowHeight = window.innerHeight * 0.6;
 
-        function animaScroll() {
-            sections.forEach(item => {
-                const sectionTop = item.getBoundingClientRect().top;
-                const isSectionVisible = (sectionTop - windowHeight) < 0;
-                if (isSectionVisible) {
-                    item.classList.add('ativo');
-                // } else if(item.classList.contains('ativo')) {
-                //     item.classList.remove('ativo');   if para fazer com q a animação seja removida caso o scroll volte para cima
-                }
-            })
-        }
-
-        animaScroll();
-
-        window.addEventListener('scroll', animaScroll)
+        this.checkDistance = this.checkDistance.bind(this)
     }
+
+    getDistance() {
+        this.distance = [...this.sections].map( section => {
+            const offset = section.offsetTop;
+            return {
+                element: section,
+                offset: Math.floor(offset - this.windowHeight),
+            };
+        })
+    }
+
+    checkDistance() {
+        this.distance.forEach( item => {
+            if (window.pageYOffset > item.offset) {
+                item.element.classList.add('ativo')
+            }
+        })
+    }
+
+    init() {
+        if(this.sections.length) {
+            this.getDistance();
+            this.checkDistance();
+            window.addEventListener('scroll', this.checkDistance);
+        }
+    }
+
 }

@@ -8,6 +8,7 @@ import initMenuMobile from './modules/initMenuMobile.js';
 import initFuncionamento from './modules/funcionamento.js';
 import initFetchAnimais from './modules/fetch-animais.js';
 import fetchBTC from './modules/fetchBtc.js';
+import AnimacaoScroll from './modules/scroll-animacao.js';
 
 const scrollSuave = new LinkScroll('.js-menu a[href^="#"]')
 scrollSuave.init()
@@ -21,7 +22,9 @@ tabNav.init();
 const modal = new Modal('[data-modal="abrir"]', '[data-modal="fechar"]', '[data-modal="container"]')
 modal.init()
 
-initAnimacaoScroll();
+const animacaoScroll = new AnimacaoScroll('.js-scroll');
+animacaoScroll.init();
+
 dropDownMenu();
 initMenuMobile();
 initFuncionamento();
