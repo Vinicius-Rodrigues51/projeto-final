@@ -3,7 +3,7 @@ import initAnimacaoScroll from './modules/scroll-animacao.js';
 import Accordions from './modules/accordion.js';
 import TabNav from './modules/tabnav.js';
 import Modal from './modules/modal.js';
-import dropDownMenu from './modules/dropdown-menu.js';
+import DropDownMenu from './modules/dropdown-menu.js';
 import initMenuMobile from './modules/initMenuMobile.js';
 import initFuncionamento from './modules/funcionamento.js';
 import initFetchAnimais from './modules/fetch-animais.js';
@@ -25,7 +25,10 @@ modal.init()
 const animacaoScroll = new AnimacaoScroll('.js-scroll');
 animacaoScroll.init();
 
-dropDownMenu();
+const dropdownMenu = new DropDownMenu('[data-dropdown]');
+dropdownMenu.init();
+
+
 initMenuMobile();
 initFuncionamento();
 initFetchAnimais();
