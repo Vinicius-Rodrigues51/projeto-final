@@ -6,7 +6,7 @@ import Modal from './modules/modal.js';
 import DropDownMenu from './modules/dropdown-menu.js';
 import MenuMobile from './modules/initMenuMobile.js';
 import Funcionamento from './modules/funcionamento.js';
-import initFetchAnimais from './modules/fetch-animais.js';
+import fetchAnimais from './modules/fetch-animais.js';
 import fetchBTC from './modules/fetchBtc.js';
 import AnimacaoScroll from './modules/scroll-animacao.js';
 
@@ -35,5 +35,5 @@ const funcionamento = new Funcionamento('[data-semana]');
 funcionamento.init();
 
 
-initFetchAnimais();
+fetchAnimais('./animalsAPI.json', '.numeros-grid');
 fetchBTC()
