@@ -5,7 +5,7 @@ import TabNav from './modules/tabnav.js';
 import Modal from './modules/modal.js';
 import DropDownMenu from './modules/dropdown-menu.js';
 import MenuMobile from './modules/initMenuMobile.js';
-import initFuncionamento from './modules/funcionamento.js';
+import Funcionamento from './modules/funcionamento.js';
 import initFetchAnimais from './modules/fetch-animais.js';
 import fetchBTC from './modules/fetchBtc.js';
 import AnimacaoScroll from './modules/scroll-animacao.js';
@@ -31,7 +31,9 @@ dropdownMenu.init();
 const menuMobile = new MenuMobile('[data-menu="button"]', '[data-menu="list"]')
 menuMobile.init()
 
+const funcionamento = new Funcionamento('[data-semana]');
+funcionamento.init();
 
-initFuncionamento();
+
 initFetchAnimais();
 fetchBTC()
