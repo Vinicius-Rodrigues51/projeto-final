@@ -16,7 +16,7 @@ export default class DropDownMenu {
 
     addDropdownMenusEvent() {
         this.dropDownMenus.forEach(item => {
-            ['click', 'touchstart'].forEach(userEvent => {
+            ['touchstart', 'click'].forEach(userEvent => {
                 item.addEventListener(userEvent, this.handleClick)
             })
         })
