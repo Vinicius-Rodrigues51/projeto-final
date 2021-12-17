@@ -4,7 +4,7 @@ import Accordions from './modules/accordion.js';
 import TabNav from './modules/tabnav.js';
 import Modal from './modules/modal.js';
 import DropDownMenu from './modules/dropdown-menu.js';
-import initMenuMobile from './modules/initMenuMobile.js';
+import MenuMobile from './modules/initMenuMobile.js';
 import initFuncionamento from './modules/funcionamento.js';
 import initFetchAnimais from './modules/fetch-animais.js';
 import fetchBTC from './modules/fetchBtc.js';
@@ -28,8 +28,10 @@ animacaoScroll.init();
 const dropdownMenu = new DropDownMenu('[data-dropdown]');
 dropdownMenu.init();
 
+const menuMobile = new MenuMobile('[data-menu="button"]', '[data-menu="list"]')
+menuMobile.init()
 
-initMenuMobile();
+
 initFuncionamento();
 initFetchAnimais();
 fetchBTC()
