@@ -288,11 +288,19 @@ html.textoMaior {
 }
 
 .js-accordion dt::after {
-    content: ' ⇓';
+    content: ' ';
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background:  url('../Assets/arrow-red.svg') center center no-repeat;
+    transform: rotate(90deg);
+    margin-left: 5px;
+    transition: transform .3s;
 }
 
 .js-accordion dt.ativo::after {
-    content: ' ⇑';
+    content: ' ';
+    transform: rotate(-90deg);
 }
 
 .js-accordion dd.ativo {
@@ -321,4 +329,11 @@ html.textoMaior {
 .js .js-scroll.ativo {
     opacity: 1;
     transform: translate3d(0, 0, 0);
+}
+
+.arrow-black {
+    background: url('../Assets/arrow-black.svg') center center no-repeat;
+    display: inline-block;
+    width: 8px;
+    height: 10px;
 }
