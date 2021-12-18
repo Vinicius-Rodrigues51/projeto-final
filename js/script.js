@@ -1,5 +1,4 @@
 import LinkScroll from './modules/scroll-suave.js';
-import initAnimacaoScroll from './modules/scroll-animacao.js';
 import Accordions from './modules/accordion.js';
 import TabNav from './modules/tabnav.js';
 import Modal from './modules/modal.js';
@@ -9,6 +8,7 @@ import Funcionamento from './modules/funcionamento.js';
 import fetchAnimais from './modules/fetch-animais.js';
 import fetchBTC from './modules/fetchBtc.js';
 import AnimacaoScroll from './modules/scroll-animacao.js';
+import SlideNav from './modules/slide.js'
 
 const scrollSuave = new LinkScroll('.js-menu a[href^="#"]')
 scrollSuave.init()
@@ -37,3 +37,7 @@ funcionamento.init();
 
 fetchAnimais('./animalsAPI.json', '.numeros-grid');
 fetchBTC()
+
+const slide = new SlideNav('.slide', '.slide-wrapper');
+slide.init();
+slide.addControl('.custom-controls');
